@@ -3,9 +3,9 @@ version: "1.0"
 services:
 
   #Proxies requests to Internal services
-  reverse-proxy:
-    image: ngnix:1.17.10
-    container_name: reverse_proxy
+  nginx_test:
+    image: "ngnix:latest"
+    container_name: nginx_container_1.0
     depends_on:
         - aspnetapp
     volumes:
