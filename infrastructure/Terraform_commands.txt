@@ -1,8 +1,8 @@
 # Do the following commands in order to run the terrafom to deploy infrastrcture resources
 
-terraform init
 terraform workspace new test
 terraform workspace select test
-terraform plan
+terraform init
+terraform plan -var 'variable=value'
 terraform apply -auto-approve
 terraform destroy   [ If you want to destroy the infrastructure resources ] 
