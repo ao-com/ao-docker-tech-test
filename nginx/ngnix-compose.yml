@@ -2,7 +2,7 @@ version: "1.0"
 
 services:
 
-  #Proxies requests to Internal services
+  #Create nginx container latest
   nginx_test:
     image: "ngnix:latest"
     container_name: nginx_container_1.0
