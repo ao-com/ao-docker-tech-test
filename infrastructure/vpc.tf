@@ -7,3 +7,8 @@ resource "aws_vpc" "default" {
     Name = "ASPNETAPP VPC"
   }
 }
+
+#Output the VPC id
+output "aws_vpc_id" {
+  value = "${aws_vpc.default.id}"
+}
