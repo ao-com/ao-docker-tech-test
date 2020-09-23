@@ -4,4 +4,5 @@ terraform init
 terraform workspace new test
 terraform workspace select test
 terraform plan
-terraform apply -atuo-approve
+terraform apply -auto-approve
+terraform destroy   [ If you want to destroy the infrastructure resources ] 
