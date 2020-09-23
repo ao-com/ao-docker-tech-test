@@ -1,6 +1,6 @@
 #Read the following Pre-requisites
 
+* Install AWS CLI in your local system
 * Install the Terraform locally from Hashocorp official website. if you have winodows, you can use chocolatey which quite easy in intallation and environmet variable settings.
 * check the Terraform version
-* In AWS Cloud, create terraform user in IAM service
-    Add user then Select AWS access type followed by set permission and add user group then review and download the keys.
+* In AWS Cloud, create terraform user in IAM service by doing "Add user then Select AWS access type followed by set permission and add user group then review and download the keys.
