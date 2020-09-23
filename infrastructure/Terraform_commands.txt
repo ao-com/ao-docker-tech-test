@@ -1,0 +1,7 @@
+# Do the following commands in order to run the terrafom to deploy infrastrcture resources
+
+terraform init
+terraform workspace new test
+terraform workspace select test
+terraform plan
+terraform apply -atuo-approve
