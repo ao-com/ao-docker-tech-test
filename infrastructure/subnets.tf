@@ -9,8 +9,12 @@ resource "aws_subnet" "public-subnet" {
   }
 }
 
+#Output the Public Subnet id
+output "aws_public_subnet_1" {
+  value = "${aws_subnet.public-subnet.id}"
+}
 
-#Define the public subnet
+#Define the private subnet
 resource "aws_subnet" "private-subnet" {
   vpc_id = "${aws_vpc.default.id}"
   cidr_block = "${var.private_subnet_1}"
@@ -19,4 +23,9 @@ resource "aws_subnet" "private-subnet" {
   tags {
     Name = "ASPNETAPP Public Subnet 1"
   }
+}
+
+#Output the Private Subnet id
+output "aws_private_subnet_1" {
+  value = "${aws_subnet.private-subnet.id}"
 }
