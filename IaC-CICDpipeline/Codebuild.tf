@@ -1,5 +1,5 @@
 ata "template_file" "buildspec" {
-  template = "${file("buildspec.yml")}"
+  template = "${file("../buildspec.yml")}"
   vars = {
     env          = var.env
   }
