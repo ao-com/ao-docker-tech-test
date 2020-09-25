@@ -1,9 +1,9 @@
-version: "1.0"
+version: "3"
 
-services:
-
-  #Create nginx container latest
-  nginx_test:
+loadbalancer:  
+  build: ./nginx-dockerfile
+  tty: true
+  links:
     image: "ngnix:latest"
     container_name: nginx_container_1.0
     depends_on:
@@ -12,6 +12,10 @@ services:
       - ./reverse_proxy/nginx.conf:/etc/nginx/nginx/nginx.conf
     ports:
       - 80:80
+networks:
+  default:
+    external:
+      name: nginx_network
   
   # Generate ASPNET APP
   ASPNETAPP:
