@@ -11,7 +11,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - 'docker build -t https://github.com/arunnirmal/ao-docker-tech-test .'
-	  - 'docker run --name ${name} -p 5001:80 ${name}
+      - 'docker run --name ASPNETAPP -p 5001:80 $IMAGENAME
       - 'docker tag https://github.com/arunnirmal/ao-docker-tech-test:latest https://github.com/arunnirmal/ao-docker-tech-test:$IMAGE_TAG'
   post_build:
     commands:
