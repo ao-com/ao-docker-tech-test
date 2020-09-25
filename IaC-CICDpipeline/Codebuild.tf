@@ -5,19 +5,19 @@ ata "template_file" "buildspec" {
   }
 }
 
-resource "aws_codebuild_project" "static_web_build" {
+resource "aws_codebuild_project" "aspnet_build" {
   badge_enabled  = false
   build_timeout  = 60
   name           = "static-web-build"
   queued_timeout = 480
-  service_role   = data.aws_iam_role.static_build_role.arn
+  service_role   = data.aws_iam_role.aspnet_build_role.arn
   tags = {
     Environment = var.env
   }
 
   artifacts {
     encryption_disabled    = false
-    name                   = "static-web-build-${var.env}"
+    name                   = "aspnet-build-${var.env}"
     override_artifact_name = false
     packaging              = "NONE"
     type                   = "CODEPIPELINE"
@@ -25,10 +25,10 @@ resource "aws_codebuild_project" "static_web_build" {
 
   environment {
     compute_type                = "BUILD_GENERAL1_SMALL"
-    image                       = "aws/codebuild/amazonlinux2-x86_64-standard:2.0"
+    image                       = "aws/codebuild/ami-03f14363e371d3d61"
     image_pull_credentials_type = "CODEBUILD"
     privileged_mode             = false
-    type                        = "LINUX_CONTAINER"
+    type                        = "WINDOWS_CONTAINER"
   }
 
   logs_config {
